@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="css/landingpagecss.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://kit.fontawesome.com/fd28305bd0.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@700&family=Caveat:wght@600&family=EB+Garamond:ital,wght@1,500&family=Fira+Sans+Condensed:wght@500&family=Golos+Text:wght@400;800;900&family=Gruppo&family=IBM+Plex+Sans+Condensed:ital,wght@1,500&family=Montserrat&family=Noto+Sans&family=Nunito+Sans:wght@300;700&family=Oswald:wght@400;500&family=Poltawski+Nowy:wght@500&family=Roboto:ital@0;1&family=Russo+One&family=Sono:wght@500&family=Source+Sans+Pro:wght@700&family=Space+Grotesk:wght@400;700&family=Tilt+Warp&family=Work+Sans:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" type="image" href="images/Logofortitle.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freshmen | Let's Start Together</title>
+</head>
+<!-- -----------------------------------Just checking the commit-----------------------------  -->
+
+<body>
+  <!-- preloader div  -->
+  <div id="preloader">
+    <div class="flexcontainer">
+      <div class="logo flexitem1">
+        <img src="images/Logofortitle.png" alt="">
+      </div>
+      <div class="title flexitem2">
+        <img src="images/Freshmen_heading.png" alt="">
+      </div>
+    </div>
+  </div>
+
+
+  <header>
+    <!-- -------------------------------------------------------------------Navbar---------------------------------------------- -->
+    <nav>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="images/Logo_Title.png" alt="Logo" width="300" height="60" class="d-inline-block align-text-top">
+          </a>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="https://forms.gle/GQau6y1P3DFyTDPJ7">Report Bug</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <div class="submitbtn">
+              <button type="button" onclick = "window.location.href='https://forms.gle/3cviRX58Do1SdWb49';"
+              >Submit Review
+                  <ul class="popup-message">Help others students make informed choices , Fill the form!</ul>
+              </button>
+            </div>
+          </ul>
+        </div>
+        <nav>
+          <!-- -----------------------------------------------------------------Navbar(responsive)------------------------------------- -->
+          <div class="navbar-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <ul class="navbar-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="https://forms.gle/GQau6y1P3DFyTDPJ7">Report Bug</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a><button type="button" onclick = "window.location.href='https://forms.gle/3cviRX58Do1SdWb49';">Submit Review</button></a></li>
+          </ul>
+        </nav>
+      </nav>
+  </header>
+  <!-- -----------------------------------------------------------------Heading and Description-------------------------------- -->
+  <div class="content-area">
+    <div class="head"><strong>'ProfCheck'</strong> is a tool to filter<br>
+      <center>Professors for <strong>FFCS.</strong></center></br>
+    </div>
+    <div class="desc">Freshman will help you filter profs before FFCS so that <br>
+      <center>you'll not regret later!</center></br>
+    </div>
+    <!-- -----------------------------------------------------------------Search Area-------------------------------------------- -->
+    <div class="search-bar">
+      <div>
+        <input type="text" id="searchInput" placeholder="Enter a name">
+        <select id="dropdown">
+          <!-- Filled by DB data  -->
+        </select>
+        <button id="submit">Find out!</button>
+      </div>
+    </div>
+    <div class="results">
+      <h3>Review:</h3>
+      <p id="selectedOption"></p>
+    </div>
+  </div>
+
+  <!------------------------------------------------------------------------Accordion(FAQs)--------------------------------------- -->
+  <h1><strong>FAQs</strong></h1>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-item-header">
+        What is FFCS?
+      </div>
+      <div class="accordion-item-body">
+        <div class="accordion-item-body-content">
+          FFCS stands for Fully Flexible Credit System, which grants students the freedom to register faculty based on
+          their choices. You will be assigned a time slot, during which you are required to register for courses with
+          your desired faculty.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-item-header">
+        How the rating is decided?
+      </div>
+      <div class="accordion-item-body">
+        <div class="accordion-item-body-content">
+          We determine the rating by tracking the following parameters: Teaching, Evaluation, Behavior, Internals ,
+          Class average. Once we have collected the necessary data, we calculate the average rating and present it to
+          you.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-item-header">
+        Is the data 100% accurate?
+      </div>
+      <div class="accordion-item-body">
+        <div class="accordion-item-body-content">
+          No , Profcheck relies solely on the data provided by students who have previously experienced the faculty. So please do not give wrong 
+          teachers review , since it is going to impact your fellow batchmates decision.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-item-header">
+        What should be the priority parameters?
+      </div>
+      <div class="accordion-item-body">
+        <div class="accordion-item-body-content">
+          While the priority parameters may vary from student to student, a commonly accepted and generalized priority
+          order for choosing faculty can be as follows: Evaluation>Teaching>Class average>Internals >Behavior.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ---------------------------------------------------------------------footer------------------------------------------------ -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div id="footerImage">
+        <img src="images/Logopng.png" class="logoforfoot" height="80" width="80">
+      </div>
+      <div class="footer-text">Get the immersive and smooth experience<br> through starting off your engineering
+        career<br> with the
+        help of Freshmen.
+      </div>
+    </div>
+    <ul class="quicklink">
+      <b>Quick links</b>
+      <li><a href="#">ProfCheck</a></li>
+<!--       <li><a href="#">GPA Calculator</a></li>
+      <li><a href="#">OD Finder</a></li>
+      <li><a href="#">AcadHelp</a></li> -->
+    </ul>
+    <div class="email">
+      <div><b>Subscribe for notifications</b></div>
+      <input class="subscribe" placeholder="Enter your email">
+      <button id="Subscribe2">Subscribe</button>
+    </div>
+  </footer>
+  <!-- ---------------------------------------------------------Resposive Navbar Toggle button JS------------------------------- -->
+  <script>
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    navbarToggle.addEventListener('click', function () {
+      navbarMenu.classList.toggle('show');
+    });
+
+  </script>
+  <!-- -----------------------------------------------------------Search Result JS------------------------------------------------- -->
+
+
+  <script>
+
+    let newsession = sessionStorage.getItem("newsession");
+
+    let preloader = document.getElementById('preloader');
+    let completed = false;
+
+    if (performance.navigation.type === 1) {
+      // Page was reloaded
+      console.log("Page was reloaded");
+    } else {
+      // Page was not reloaded
+      console.log("Page was not reloaded");
+    }
+
+    // checking whether the user is opening a new session or not
+    // if its a new session then only the preloader will be shown otherwise it will be not shown
+    if (newsession == "false ") {
+      preloader.style.display = "none";
+    }
+
+
+    if (performance.navigation.type === 1 || newsession != "false") {
+      preloader.style.display = "flex";
+      window.addEventListener("load", setTimeout(function () {
+        preloader.style.animation = "preloader-fade-out 0.25s ease-in-out forwards";
+        completed = true;
+
+        sessionStorage.setItem("newsession", "false");
+
+        if (completed == true) {
+          setTimeout(function () {
+            preloader.style.display = "none";
+
+          }, 800);
+        }
+
+
+      }, 3000));
+
+    }
+
+  </script>
+
+  <!-- --------------------------------Jscript for Accordion(FAQs) ----------------------->
+  <script>
+    const accordionItemHeaders = document.querySelectorAll(".accordion-item-header")
+    accordionItemHeaders.forEach(accordionItemHeaders => {
+      accordionItemHeaders.addEventListener("click", event => {
+        accordionItemHeaders.classList.toggle("active");
+      })
+    })
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9E1BW75HJ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-9E1BW75HJ6');
+  </script>
+
+  <script src="./js/index.js"></script>
+  <!-- ---------------------------------------------------------------------To be continued--------------------------------------------- -->
+  </nav>
+
+
+
+
+</body>
+
+</html>
