@@ -9,10 +9,8 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3500;
 
-// built in middleware for handling form data
-app.use(express.urlencoded({ extended: false}));
-// build in middleware for json
-app.use(express.json());
+app.use(express.urlencoded({ extended: false}));    // built in middleware for handling form data
+app.use(express.json());    // build in middleware for json
 
 // Connect to MongoDB
 DBConnect();
@@ -28,11 +26,6 @@ app.use('/', require('./routes/root.js'))
 // crud apis for proffessor model
 app.use('/professor', require('./routes/api/professors'))
 
-
-
-// app.listen(PORT, ()=>{
-//     console.log(`server is running on port ${PORT}`);
-// })
 
 mongoose.connection.once('open', ()=>{
     console.log("mongoDB connected");
