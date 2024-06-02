@@ -1,0 +1,833 @@
+/* Customizing color of selected area by the user */
+::selection{
+  color:black;
+  background-color:yellow ;
+}
+
+/* -----------------------------------------------Background-------------------------------------------------------- */
+body {
+  margin: 0;
+  background-color: black;
+  background-image: url("../images/bgimg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* -----------------------------------------------Navbar----------------------------------------------------------- */
+.navbar-brand {
+  text-decoration: none;
+  padding-left: 15px;
+}
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 40px;
+}
+.container-fluid ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
+}
+.container-fluid ul li a {
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  text-decoration: none;
+}
+.container-fluid ul li a:hover {
+  color: yellow;
+}
+
+
+
+
+.d-inline-block {
+  padding-top: 20px;
+}
+li {
+  display: flexbox;
+  display: inline;
+}
+a.Details {
+  position: relative;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+}
+.Details {
+  padding-right: 1px;
+}
+button {
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  border: none;
+  background: yellow;
+  padding: 12px 30px;
+  color: #5400ff;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+button:hover {
+  color:#f0ff00;
+  background-color: #5400ff;
+  border: 2px solid #f0ff00;
+}
+.submitbtn {
+  position: relative;
+  display: inline-block;
+}
+.popup-message {
+  visibility: hidden;
+  width: 200px;
+  background-color: #33009a;
+  color: #f0ff00;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 110%;
+  left: 45%;
+  transform: translateX(-50%);
+  opacity: 0;
+  font-size: 0.9rem;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+button:hover  .popup-message {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* ------------------------------------------------------------------------Navbar(Responsive)---------------------------------------------------------- */
+.navbar-menu {
+  position: absolute;
+  right: 2rem;
+  top: 90px;
+  width: 300px;
+  background-color: #32009731;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  display: none;
+  overflow: hidden;
+}
+.navbar-menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-menu li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+}
+.navbar-menu button {
+  align-items: center;
+  justify-content: center;
+}
+.navbar-toggle {
+  display: none;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+/* ----------------------------------------------------------------------Search button---------------------------------------------------------- */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+/*--- Input field---- */
+input[type="text"] {
+  padding: 5px;
+  width: 250px;
+  height: 37px;
+  border-radius: 10px;
+  border: #fff;
+  background-color: white;
+}
+#selectedOption {
+  font-weight: bold;
+  color: black;
+}
+/* ---Find out button-- */
+button[type="submit"] {
+  height: 50px;
+  padding: 2px 16px;
+  background-color: #f0ff00;
+  border: none;
+  border-radius: 6px;
+  color: #5400ff;
+  font-size: 16px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #5400ff;
+  color: white;
+}.search-bar {
+    justify-content: center;
+}
+select {
+  height: 45px;
+  width: 170px;
+  border-radius: 10px;
+}
+/* ---------------------------------------------------------Heading and Description------------------------------------------------------------- */
+.content-area {
+  display: grid;
+  justify-content: center;
+  margin: none;
+  padding-top: 30px;
+  grid-template-columns: auto;
+  grid-template-rows: 200px 120px 150px 400px;
+}
+/* --Heading-- */
+.head {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  padding-left: 27px;
+  padding-top: 30px;
+  font-size: 3.7rem;
+  justify-self: center;
+}
+
+/* --Description-- */
+.desc {
+  color: #f0ff00;
+  font-family: "Nunito Sans", sans-serif;
+  padding-left: 27px;
+  padding-top: 8px;
+  font-size: 1.6rem;
+  justify-self: center;
+}
+.bold br {
+  display: none;
+}
+
+/* -------Result reflection area---- */
+.results {
+  background-color: #5500ff79;
+  height: 219px;
+  border-radius: 10px;
+}
+p {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: rgb(0, 255, 0);
+  height: 167px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+h3 {
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #f0ff00;
+}
+#selectedOption {
+  color: black;
+}
+
+/* ------------------------------------------------------------------------Accordion(FAQs) */
+h1{
+  font-weight: bold;
+  color: #f0ff00;
+  font-size: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+  padding-bottom: 0rem;
+}
+.accordion{
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.accordion-item{
+  background-color: #33009a;
+  color: white;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.383)
+}
+.accordion-item-header{
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+.accordion-item-header::after{
+  content: "\25BE";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+.accordion-item-header.active::after{
+  transform: rotate(180deg);
+}
+.accordion-item-body{
+  display: none;
+  padding: 1rem;
+  color: #f0ff00;
+  line-height: 1.5rem;
+  border-top: 2px solid #f0ff00;
+  font-family: 'Montserrat', sans-serif;
+  border-image: linear-gradient(to right, transparent , #f0ff00 , transparent )1;
+}
+.accordion-item-header.active + .accordion-item-body{
+  display: block;
+}
+
+/* -------------------------------------------------------------------------------footer----------------------------------------------------------------- */
+
+.footer{
+  display: grid;
+  /* grid-template-columns: 300px 400px 647px; */
+  grid-template-columns: auto auto auto ;
+  grid-template-rows: auto;
+  background-color:#33009a;
+  height: 14rem;
+  justify-content: space-around;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+#footerImage{
+  text-align: center;
+}
+
+.footer-text{
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  position: relative;
+  bottom:1rem;
+  /* padding-left: 16px;
+  padding-bottom: 10px; */
+  font-size: 1rem;
+}
+.quicklink{
+  color: yellow;
+  padding-left: 10rem;
+  display: list-item;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  padding-left: 5rem;
+  list-style: none;
+  /* padding-top: 0.9rem;
+  padding-bottom: 10px; */
+
+}
+.quicklink li a{
+  display: list-item;
+  padding: 2px;
+  text-decoration: none;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 3px;
+}
+.quicklink li a:hover{
+  color: yellow;
+}
+.email b{
+  color: yellow;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem; 
+  padding-bottom: 10px;
+  padding-left: 0.5rem;
+}
+.email{
+  padding-top: 1rem;
+  padding-left: 3rem;
+}
+.email input{
+  height: 25px;
+  width: 400px;
+  margin: 7px;
+  border-radius: 7px;
+  border: white;
+  padding: 10px;
+  padding-top: 10px;
+
+}
+.button .Subscribe2{
+  display: none;
+}
+.logoforfoot{
+  height: 7rem;
+  width: auto;
+  /* padding-top: 1.6rem;
+  padding-left: 1.2rem;
+  padding-bottom: 0.4rem; */
+}
+
+/* ---------------------------------------------------------------------------Responsive code starts here------------------------------------------------- */
+@media (max-width: 790px){
+  /* --Background-- */
+  body {
+    background-size: cover;
+    background-image: url("responsivebg.png");
+  }
+  /* --Navbar-- */
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 28px;
+    right: 15px;
+    padding: 10px;
+  }
+  .navbar-menu {
+    left: 2rem;
+    width: unset;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .d-inline-block {
+    height: 40px;
+    width: 200px;
+  }
+  .container-fluid ul {
+    display: none;
+  }
+  .fas {
+    color: white;
+  }
+  .navbar-brand {
+    margin: 0px;
+    padding-left: 1rem;
+    padding-top: 0.4rem;
+  }
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 6px auto;
+    background-color: #555;
+    transition: all 0.2s;
+  }
+  .navbar-menu.show {
+    display: block;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  /* --Input field-- */
+  input[type="text"] {
+    padding: 6px;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    border: #fff;
+    background-color: white;
+  }
+  .search-bar {
+    margin: 15px;
+  }
+  button {
+    padding: 12px 15px;
+  }
+  .results {
+    background-color: #5400ff;
+    height: 219px;
+    margin: 15px;
+    border-radius: 10px;
+  }
+  #dropdown {
+    width: 130px;
+    height: 43px;
+  }
+  /* --Heading and Description-- */
+  .head {
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+    padding-right: 20px;
+    padding-top: 50px;
+    font-size: 1.7rem;
+    justify-self: center;
+  }
+  .desc {
+    color: #f0ff00;
+    font-family: "Nunito Sans", sans-serif;
+    padding-right: 20px;
+    padding-top: 8px;
+    font-size: 0.8rem;
+    justify-self: center;
+  }
+  .content-area {
+    display: grid;
+    margin: none;
+    padding-top: 30px;
+    grid-template-columns: 1 span;
+    grid-template-rows: 130px 80px 150px 400px 150px;
+  }
+  /* -------------footer-------------- */
+  .footer{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    height: 600px;
+    justify-content: center;
+    /* align-: center; */
+    background-color:#33009a;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+ 
+  #footerImage{
+    text-align: center;
+  }
+
+  .footer-text{
+    /* padding-left: 1.8rem; */
+    font-size: 1.1rem;
+    /* padding-top: 1rem; */
+    text-align: center;
+  }
+  .quicklink{
+    padding-left: 0rem;
+    font-size: 1.2rem;
+    text-align: center;
+    /* padding-top: 0.6rem; */
+    margin: 0;
+  }
+  .email input{
+    height: 25px;
+    width: 210px;
+    margin: 7px;
+    border-radius: 7px;
+    border: white;
+    padding: 10px;
+    padding-top: 10px;
+  }
+  .email{
+    padding-left: 0rem;
+  }
+  .email div b{
+    padding-left: 1.1rem;
+  }
+
+  /* -------------------------------------------------------------------For smaller width devices--------------------------------------------- */
+  @media (max-width: 398px) {
+    .head {
+      color: white;
+      font-family: "Nunito Sans", sans-serif;
+      padding-right: 20px;
+      padding-top: 50px;
+      font-size: 1.5rem;
+      justify-self: center;
+    }
+    body{
+      background-size: cover;
+      background-image: url("../images/responsivebg.png");
+    }
+    .desc {
+      color: #f0ff00;
+      font-family: "Nunito Sans", sans-serif;
+      padding-right: 20px;
+      padding-top: 8px;
+      font-size: 0.7rem;
+      justify-self: center;
+    }
+    .search-bar {
+      margin: 9px;
+    }
+    button {
+      padding: 8px 10px;
+    }
+    .results {
+      background-color: #5400ff;
+      height: 219px;
+      margin: 15px;
+      border-radius: 10px;
+    }
+    #dropdown {
+      width: 120px;
+      height: 37px;
+    }
+    input[type="text"] {
+      padding: 6px;
+      width: 105px;
+      height: 25px;
+      border-radius: 10px;
+      border: #fff;
+      background-color: white;
+    }
+    .footer{
+      display: grid;
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto;
+      height: 600px;
+      background-color:#33009a;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+    }
+    /* .logoforfoot{
+      padding-left: 11rem;
+    }
+    .logoforfoot{
+      padding-top: 3rem;
+    } */
+    .footer-text{
+      padding-left: 10px;
+      /* font-size: 0.95rem; */
+      padding-top: 1rem;
+      text-align: center;
+    }
+    .quicklink{
+      padding-left: 0rem;
+      font-size: 1rem;
+      text-align: center;
+      /* padding-top: 0.6rem; */
+      margin: 0;
+    }
+    .email input{
+      height: 17px;
+      width: 190px;
+      margin: 7px;
+      border-radius: 7px;
+      border: white;
+      padding: 10px;
+      padding-top: 10px;
+    }
+    .email{
+      padding-left: 1rem;
+    }
+    .email div b{
+      padding-left: 0.3rem;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************************************************************  */
+/* ------------------------------------------- Preloader added by Abhishek ----------------------------------  */
+/* **********************************************************************************************************  */
+
+/* #preloader{
+  display: flex;
+  position: fixed;
+  background-color: black;
+  height: 100vh; */
+  /* width: 100vw; */
+  /* justify-content: center;
+  align-items: center;
+  z-index: 100;
+  
+} */
+
+/* #preloader img{
+
+  width: 100vw;
+  
+} */
+
+/* -------------- Animation Keyframes ----------- */
+@keyframes preloader-fade-out{
+  100%{
+    opacity:0;
+  }
+}
+
+
+#preloader{
+  position: fixed;
+
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  display: none;     /* will make display:flex using js on load */
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.flexcontainer{
+  position: absolute;
+  top: 32vh;
+  /* width: 5rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.flexitem1{
+  /* overflow: hidden; */
+  /* width: fit-content; */
+  z-index: 3;
+}
+
+.flexitem1 img{
+  height: 7rem;
+  transform: translate(130%);
+  animation: shrink-move-logo 2s 0.2s 1 forwards;
+  
+}
+
+.flexitem2{
+  overflow: hidden;
+  /* width: fit-content; */
+}
+
+.flexitem2 img{
+  height: 5rem;
+  transform: translate(-100%);
+  /* width: fit-content; */
+  animation: slide-right 1s 1.5s forwards;
+  
+}
+
+.flexcontainer::after{
+  position: absolute;
+  content: "";
+  width: 4rem;
+  height: 3px;
+  border-radius: 10rem;
+  background-color: yellow;
+  bottom: 25%;
+  left:30%;
+  opacity: 0;
+  animation: loading 1s 3s ease-in-out infinite alternate;
+}
+
+@keyframes shrink-move-logo{
+  0%{
+      height: 7rem;
+      transform: translate(130%);
+  }
+  50%{
+      transform: translate(130%) scale(0.6);
+  }
+  100%{
+      transform: translate(0%) scale(0.6);
+  }
+}
+
+@keyframes slide-right {
+  100%{
+      transform: translate(-2%);
+  }
+}
+
+@keyframes loading{
+  0%{
+      opacity:100
+  }
+  
+  100%{
+      opacity:100;
+      transform: translate(320%);
+  }
+}
+
+
+
+
+
+/* ************************************************* Responsive Designs ******************************************* */
+
+@media (max-width : 640px){
+
+  /* .flexcontainer{
+      width: 640px;
+  } */
+
+  
+  
+  .flexitem1 img{
+      height: 5rem;
+      transform: translate(120%);
+      animation: shrink-move-logo 2s 0.2s forwards;
+  }
+  
+  .flexitem2{
+      overflow: hidden;
+      /* width: fit-content; */
+  }
+  
+  .flexitem2 img{
+      height: 3rem;
+      transform: translate(-100%);
+      /* width: fit-content; */
+      animation: slide-right 1s 1.5s forwards;
+      
+  }
+  
+  .flexcontainer::after{
+      position: absolute;
+      content: "";
+      width: 3rem;
+      height: 3px;
+      border-radius: 10rem;
+      background-color: yellow;
+      bottom: 25%;
+      left:30%;
+      opacity: 0;
+      animation: loading 1s 3s ease-in-out infinite alternate;
+  }
+  
+
+  @keyframes shrink-move-logo{
+      0%{
+          height: 5rem;
+          transform: translate(120%);
+      }
+      50%{
+          transform: translate(120%) scale(0.6);
+      }
+      100%{
+          transform: translate(0%) scale(0.6);
+      }
+  }
+  
+  @keyframes slide-right {
+      100%{
+          transform: translate(-2%);
+      }
+  }
+  
+  @keyframes loading{
+      0%{
+          opacity:100
+      }
+      
+      100%{
+          opacity:100;
+          transform: translate(260%);
+      }
+  }
+}
+
+

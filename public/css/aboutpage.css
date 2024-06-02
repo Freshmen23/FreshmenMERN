@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Customizing color of selected area by the user */
+::selection{
+  color:black;
+  background-color:yellow ;
+}
+
+body {
+    padding-top: 1rem;
+    margin: 0;
+    background-color: black;
+    background-image: url("../images/Backgroundimage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* -----------------------------------------------Navbar----------------------------------------------------------- */
+
+header{
+    margin-top: 0.3rem;
+}
+
+
+.navbar-brand {
+    text-decoration: none;
+    padding-left: 15px;
+  }
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 40px;
+  }
+  .container-fluid ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 50px;
+  }
+  .container-fluid ul li a {
+    font-family: "Nunito Sans", sans-serif;
+    color: white;
+    text-decoration: none;
+  }
+  .container-fluid ul li a:hover {
+    color: yellow;
+  }
+  .d-inline-block {
+    padding-top: 17px;
+  }
+  li {
+    display: flexbox;
+    display: inline;
+  }
+  a.Details {
+    position: relative;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+  }
+  .Details {
+    padding-right: 1px;
+  }
+  button {
+    cursor: pointer;
+    font-family: "Nunito Sans", sans-serif;
+    border: none;
+    background: yellow;
+    padding: 12px 30px;
+    color: #5400ff;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.4s;
+    border-radius: 10px;
+  }
+  button:hover {
+    color: white;
+    background-color: #5400ff;
+  }
+  /* ------------------------------------------------------------------------Navbar(Responsive)---------------------------------------------------------- */
+  h1{
+    font-weight: bold;
+    color: #f0ff00;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 1rem;
+}
+
+  .navbar-menu {
+    position: absolute;
+    right: 2rem;
+    top: 90px;
+    width: 300px;
+    background-color: #32009731;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    display: none;
+    overflow: hidden;
+  }
+  .navbar-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-menu li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  .navbar-menu button {
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+
+/* -------------------------------------------------------------------------About---------------------------------------------------------------------- */
+.about{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    background-color:  #33009a4d;
+    border-radius: 0.5rem;
+    padding: 2rem ;
+    font-size: 1.2rem;
+}
+section{
+    /* padding-top: 5rem; */
+    /* margin: 2rem 0rem; */
+    padding:2rem 5rem;
+}
+
+/* -------------------------------------------------------------------------Timeline--------------------------------------------------------------------- */
+.timeline{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    background-color:  #33009a4d;
+    border-radius: 0.5rem;
+    padding: 2rem ;
+    font-size: 1.2rem;
+}
+main{
+    padding-top: 4rem;
+}
+/* -----------------------------------------------------------------------Responsivenss------------------------------------------------------------------- */
+@media (max-width: 790px){
+    body {
+        padding-top: 0;
+        margin: 0;
+        background-color: black;
+        background-image: url("../images/responsivebg.png");
+        background-size: cover;
+    }
+    section{
+        padding-top: 1rem;
+        padding: 2rem;
+    }
+    .about{
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        background-color:  #33009a4d;
+        border-radius: 0.5rem;
+        padding: 2rem ;
+        font-size: 1rem;
+    }
+    .timeline{
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        background-color:  #33009a4d;
+        border-radius: 0.5rem;
+        padding: 2rem ;
+        font-size: 0.8rem;
+    }
+}
+
+
+
+/* ---------------------------------------------------------------------------Responsive code starts here------------------------------------------------- */
+@media (max-width: 790px) {
+    /* --Background-- */
+    /* body {
+      background-size: 120rem;
+    } */
+    /* --Navbar-- */
+    .navbar-toggle {
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      top: 28px;
+      right: 15px;
+      padding: 10px;
+    }
+    .navbar-menu {
+      left: 2rem;
+      width: unset;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .d-inline-block {
+      height: 40px;
+      width: 200px;
+    }
+    .container-fluid ul {
+      display: none;
+    }
+    .fas {
+      color: white;
+    }
+    .navbar-brand {
+      margin: 0px;
+      padding-left: 1rem;
+      padding-top: 0.4rem;
+    }
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      margin: 6px auto;
+      background-color: #555;
+      transition: all 0.2s;
+    }
+    .navbar-menu.show {
+      display: block;
+    }
+}
