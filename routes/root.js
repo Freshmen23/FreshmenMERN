@@ -14,4 +14,8 @@ router.get('/contact', (req, res)=>{
     res.sendFile(path.join(__dirname, '..', 'views', 'contact.html'));
 })
 
+router.get('/fillReview', (req, res)=>{
+    res.sendFile(path.join(__dirname, '..', 'views', 'fillReview.html'));
+})
+
 module.exports = router;

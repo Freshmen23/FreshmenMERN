@@ -2,10 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Submit Review</title>
 </head>
 <body>
-    <form action="\" method="post"></form>
+    <form id="reviewForm">
+        <div class="form-group">
+            <label for="name">Teacher</label>
+            <select name="name" id="teacher" required>
+              <!-- filled by DB  -->
+            </select>
+          </div>
+      
+        <div class="form-group">
+            <label>Teaching</label>
+            <div class="radio-group">
+              <label><input type="radio" name="teaching" value="1"> 1</label>
+              <label><input type="radio" name="teaching" value="2"> 2</label>
+              <label><input type="radio" name="teaching" value="3"> 3</label>
+              <label><input type="radio" name="teaching" value="4"> 4</label>
+              <label><input type="radio" name="teaching" value="5"> 5</label>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label>Internals</label>
+            <div class="radio-group">
+              <label><input type="radio" name="internals" value="1"> 1</label>
+              <label><input type="radio" name="internals" value="2"> 2</label>
+              <label><input type="radio" name="internals" value="3"> 3</label>
+              <label><input type="radio" name="internals" value="4"> 4</label>
+              <label><input type="radio" name="internals" value="5"> 5</label>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label>Behavior</label>
+            <div class="radio-group">
+              <label><input type="radio" name="behavior" value="1"> 1</label>
+              <label><input type="radio" name="behavior" value="2"> 2</label>
+              <label><input type="radio" name="behavior" value="3"> 3</label>
+              <label><input type="radio" name="behavior" value="4"> 4</label>
+              <label><input type="radio" name="behavior" value="5"> 5</label>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label>Evaluation</label>
+            <div class="radio-group">
+              <label><input type="radio" name="evaluation" value="1"> 1</label>
+              <label><input type="radio" name="evaluation" value="2"> 2</label>
+              <label><input type="radio" name="evaluation" value="3"> 3</label>
+              <label><input type="radio" name="evaluation" value="4"> 4</label>
+              <label><input type="radio" name="evaluation" value="5"> 5</label>
+            </div>
+          </div>
+      
+          <!-- <div class="form-group">
+            <label>Class Average Marks</label>
+            <div class="radio-group">
+              <label><input type="radio" name="class_average_marks" value="low"> Low</label>
+              <label><input type="radio" name="class_average_marks" value="medium"> Medium</label>
+              <label><input type="radio" name="class_average_marks" value="high"> High</label>
+            </div>
+          </div> -->
+      
+          <button type="submit">Submit Review</button>
+        
+    </form>
+
+    <script src="./js/fillReview.js"></script>
 </body>
 </html>

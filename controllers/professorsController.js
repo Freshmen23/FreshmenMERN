@@ -36,7 +36,7 @@ const getProfessorByName = async (req, res) => {
 
 // Example of creating a new professor document
 const createProfessor = async (req, res) => {
-  let reqInputs = [req?.body?.name , req?.body?.teaching ,req?.body?.evaluation, req?.body?.behavior, req?.body?.internals, req?.body?.average]
+  let reqInputs = [req?.body?.name , req?.body?.teaching ,req?.body?.evaluation, req?.body?.behavior, req?.body?.internals, req?.body?.class_average]
 
   for (let i = 0; i<reqInputs.length; i++){
     if (!reqInputs[i]) return res.json({"error" : `Missing required field ${reqInputs[i]}`})
@@ -60,7 +60,7 @@ const createProfessor = async (req, res) => {
     evaluation: req.body.evaluation,
     behavior: req.body.behavior,
     internals: req.body.internals,
-    average: req.body.average,
+    class_average: req.body.class_average,
     numberOfReviews: 1,
     overall : OVERALL
   });
@@ -75,6 +75,7 @@ const createProfessor = async (req, res) => {
   }
 };
 
+
 // Update existing reviews
 const updateProfessor = async (req, res) => {
   if (!req.body.name) return res.json({"message" : "Professor name is required"});
@@ -84,12 +85,14 @@ const updateProfessor = async (req, res) => {
   if (!professor) return res.json({"message" : `No professor found named ${req.body.name}`})
 
   professor.numberOfReviews += 1;
-  professor.teaching = (professor.teaching + req.body.teaching)/2
-  professor.evaluation = (professor.evaluation + req.body.evaluation)/2
-  professor.behavior = (professor.behavior + req.body.behavior)/2
-  professor.internals = (professor.internals + req.body.internals)/2
+  professor.teaching = (professor.teaching + req.body.teaching) / 2;
+  professor.evaluation = (professor.evaluation + req.body.evaluation) / 2;
+  professor.behavior = (professor.behavior + req.body.behavior) / 2;
+  professor.internals = (professor.internals + req.body.internals) / 2;
+  professor.class_average = (professor.class_average + req.body.class_average) / 2;
+  
 
-  let overallRating = (professor.teaching*30 + professor.evaluation*30 + professor.internal*20 + professor.behavior*20) / 5
+  let overallRating = (professor.teaching*30 + professor.evaluation*30 + professor.internal*20 + professor.behavior*20) / 5.0
 
   let OVERALL = "";
   if(overallRating > 2 && overallRating <4){
@@ -101,7 +104,7 @@ const updateProfessor = async (req, res) => {
   }
 
   professor.overall = OVERALL;
-
+  console.log(professor)
   try {
     const savedProfessor = await professor.save();
     res.status(201).json(savedProfessor);
@@ -110,7 +113,6 @@ const updateProfessor = async (req, res) => {
     console.error('Error saving professor:', error);
   }
 }
-
 
 
 module.exports = {createProfessor, getProfessorByName, getAllProfessors, updateProfessor}

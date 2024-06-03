@@ -24,7 +24,7 @@ getProfData();
 // fill the Review area on selection of a prof
 
 document.getElementById("submit").addEventListener('click', async function () {
-    const res = await fetch("http://localhost:3500/professor");
+    const res = await fetch("https://freshmenmern.onrender.com/professor");
     const data = await res.json();
     let dropdown = document.getElementById("dropdown");
     let selectedProf = dropdown.value;
