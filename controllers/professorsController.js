@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const Professor = require('../models/Professor'); // Adjust the path as needed
 
 //getprofessor api
@@ -76,43 +75,64 @@ const createProfessor = async (req, res) => {
 };
 
 
-// Update existing reviews
-const updateProfessor = async (req, res) => {
-  if (!req.body.name) return res.json({"message" : "Professor name is required"});
+// Helper function to calculate average (consider using a separate module or utility)
+function calculateAverage(existingValue, newValue) {
+  let calculatedValue = (existingValue + parseInt(newValue, 10)) / 2;
+  return Math.round(calculatedValue * 10) / 10;
+}
 
-  const professor = await Professor.findOne({ name: req.body.name });
+// Helper function to calculate overall rating (consider refining the weighting logic)
+function calculateOverallRating(professor) {
+  const weightedSum = (parseInt(professor.teaching, 10) * 30) + (parseInt(professor.evaluation,10) * 30) +
+                      (parseInt(professor.internals, 10) * 20) + (parseInt(professor.behavior,10) * 20);
+  const overallRating = weightedSum / 100;
 
-  if (!professor) return res.json({"message" : `No professor found named ${req.body.name}`})
-
-  professor.numberOfReviews += 1;
-  professor.teaching = (professor.teaching + req.body.teaching) / 2;
-  professor.evaluation = (professor.evaluation + req.body.evaluation) / 2;
-  professor.behavior = (professor.behavior + req.body.behavior) / 2;
-  professor.internals = (professor.internals + req.body.internals) / 2;
-  professor.class_average = (professor.class_average + req.body.class_average) / 2;
-  
-
-  let overallRating = (professor.teaching*30 + professor.evaluation*30 + professor.internal*20 + professor.behavior*20) / 5.0
-
-  let OVERALL = "";
-  if(overallRating > 2 && overallRating <4){
-    OVERALL = "AVERAGE";
-  } else if (overallRating < 2){
-    OVERALL = "BAD";
+  let overall;
+  if (overallRating > 2 && overallRating < 4) {
+    overall = "AVERAGE";
+  } else if (overallRating < 2) {
+    overall = "BAD";
   } else {
-    OVERALL = "GOOD";
+    overall = "GOOD";
+  }
+  return overall;
+}
+
+const updateProfessor = async (req, res) => {
+  // Input validation
+  if (!req.body.name) {
+    return res.status(400).json({ message: "Professor name is required" });
   }
 
-  professor.overall = OVERALL;
-  console.log(professor)
   try {
+    // Find professor with name (handle potential Mongoose errors)
+    const professor = await Professor.findOne({ name: req.body.name });
+    if (!professor) {
+      return res.status(404).json({ message: `No professor found named ${req.body.name}` });
+    }
+
+    // Update professor's review data
+    professor.numberOfReviews += 1;
+    professor.teaching = calculateAverage(professor.teaching, req.body.teaching);
+    professor.evaluation = calculateAverage(professor.evaluation, req.body.evaluation);
+    professor.behavior = calculateAverage(professor.behavior, req.body.behavior);
+    professor.internals = calculateAverage(professor.internals, req.body.internals);
+    professor.class_average = calculateAverage(professor.class_average, req.body.class_average);
+
+    // Calculate and update overall rating
+    professor.overall = calculateOverallRating(professor);
+
+    // Save updated professor (handle potential Mongoose errors)
     const savedProfessor = await professor.save();
     res.status(201).json(savedProfessor);
     console.log('Professor saved:', savedProfessor);
   } catch (error) {
     console.error('Error saving professor:', error);
+    res.status(500).json({ message: 'Internal server error' }); // Handle errors gracefully
   }
-}
+};
+
+
 
 
 module.exports = {createProfessor, getProfessorByName, getAllProfessors, updateProfessor}

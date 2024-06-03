@@ -38,10 +38,14 @@ document.getElementById("submit").addEventListener('click', async function () {
           let Evaluation = data[i]['evaluation'];
           let Behaviour = data[i]['behavior'];
           let Internals = data[i]['internals'];
-          let Average = data[i]['average'];
+          let Average = data[i]['class_average'];
           let Overall = data[i]['overall'].toUpperCase();
           let noOfReviews = data[i]['numberOfReviews'];
-      
+            
+          let avg = "";
+          if (Average < 1) avg = "LOW";
+          else if (Average >2) avg = "HIGH";
+          else avg = "MEDIUM";
       
       
           //   Fetching Review of the selected Proffessor
@@ -50,7 +54,7 @@ document.getElementById("submit").addEventListener('click', async function () {
                     Behaviour : ${Behaviour} <br>
                     Internals : ${Internals} <br>
                     No Of Reviews : ${noOfReviews} <br>
-                    Average : ${Average} <br><br>
+                    Class Average : ${avg} <br><br>
                     Overall : ${Overall} <br>`
       
             ;
@@ -68,13 +72,6 @@ document.getElementById("submit").addEventListener('click', async function () {
 
 
 // for filtering searches
-// let searchInput = document.querySelector("#searchInput");
-// let 
-
-// searchInput.addEventListener("oninput", ()=>{
-
-// })
-
 function filterFunction() {
   let searchInput = document.getElementById("searchInput");
   let filter = searchInput.value.toUpperCase();
