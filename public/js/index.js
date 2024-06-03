@@ -47,7 +47,7 @@ document.getElementById("submit").addEventListener('click', async function () {
           else if (Average >2) avg = "HIGH";
           else avg = "MEDIUM";
       
-      
+          let color = "#5400ff"
           //   Fetching Review of the selected Proffessor
           selectedOption.innerHTML = `Teaching: ${Teaching} <br>
                     Evaluation : ${Evaluation} <br>
@@ -58,14 +58,20 @@ document.getElementById("submit").addEventListener('click', async function () {
                     Overall : ${Overall} <br>`
       
             ;
-        //   selectedOption.setAttribute("style", `background-color:${Color};`);
+          if (Overall === "GOOD") color="green";
+          else if (Overall === "AVERAGE") color = "#f0ff00";
+          else color = "red";
+
+          let reviewHeading = document.querySelector("#reviewHeading");
+          reviewHeading.innerHTML = `Review: ${noOfReviews} reviews`   
+          selectedOption.setAttribute("style", `background-color:${color}; color:black`);
       
       
         }
         else {
           let selectedOption = document.getElementById("selectedOption");
           selectedOption.innerHTML = `Please Select a Professor from the above Dropdown list`;
-          selectedOption.setAttribute("style", `color: #f0ff00;`);
+          selectedOption.setAttribute("style", `color: #f0ff00; background-color: #5400ff;`);
         }
       }
     })

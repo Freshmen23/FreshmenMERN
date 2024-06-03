@@ -25,7 +25,7 @@ document.getElementById('reviewForm').addEventListener('submit', function(event)
     const formObject = Object.fromEntries(formData.entries());
     console.log(formObject)
 
-    fetch('http://localhost:3500/professor', {
+    fetch('https://freshmenmern.onrender.com/professor', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
