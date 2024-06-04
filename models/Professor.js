@@ -39,7 +39,11 @@ const ProfessorSchema = new Schema({
     required: true,
     default : "",
   }
-});
+},
+  {
+    timestamps: true
+  }
+);
 
 // Create the model from the schema
 const Professor = mongoose.model('Professor', ProfessorSchema);

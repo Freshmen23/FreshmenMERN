@@ -42,14 +42,14 @@ const createProfessor = async (req, res) => {
   }
 
   // Logic for new entry of professor
-  let overallRating = (req.body.teaching*30 + req.body.evaluation*30 + req.body.internal*20 + req.body.behavior*20) / 5
+  let overallRating = (req.body.teaching*35 + req.body.evaluation*35 + req.body.internal*20 + req.body.behavior*10) / 100
 
   let OVERALL = "";
   if(overallRating > 2 && overallRating <4){
     OVERALL = "AVERAGE";
-  } else if (overallRating < 2){
+  } else if (overallRating <= 2){
     OVERALL = "BAD";
-  } else {
+  } else if (overallRating >=4) {
     OVERALL = "GOOD";
   }
 
@@ -83,16 +83,16 @@ function calculateAverage(existingValue, newValue) {
 
 // Helper function to calculate overall rating (consider refining the weighting logic)
 function calculateOverallRating(professor) {
-  const weightedSum = (parseInt(professor.teaching, 10) * 30) + (parseInt(professor.evaluation,10) * 30) +
-                      (parseInt(professor.internals, 10) * 20) + (parseInt(professor.behavior,10) * 20);
+  const weightedSum = (parseInt(professor.teaching, 10) * 35) + (parseInt(professor.evaluation,10) * 35) +
+                      (parseInt(professor.internals, 10) * 20) + (parseInt(professor.behavior,10) * 10);
   const overallRating = weightedSum / 100;
 
   let overall;
   if (overallRating > 2 && overallRating < 4) {
     overall = "AVERAGE";
-  } else if (overallRating < 2) {
+  } else if (overallRating <= 2) {
     overall = "BAD";
-  } else {
+  } else if (overallRating >= 4) {
     overall = "GOOD";
   }
   return overall;
@@ -119,6 +119,13 @@ const updateProfessor = async (req, res) => {
     professor.internals = calculateAverage(professor.internals, req.body.internals);
     professor.class_average = calculateAverage(professor.class_average, req.body.class_average);
 
+    // professor.numberOfReviews += 1;
+    // professor.teaching = req.body.teaching
+    // professor.evaluation = req.body.evaluation
+    // professor.behavior = req.body.behavior
+    // professor.internals = req.body.internals
+    // professor.class_average = req.body.class_average
+
     // Calculate and update overall rating
     professor.overall = calculateOverallRating(professor);
 
@@ -128,7 +135,7 @@ const updateProfessor = async (req, res) => {
     console.log('Professor saved:', savedProfessor);
   } catch (error) {
     console.error('Error saving professor:', error);
-    res.status(500).json({ message: 'Internal server error' }); // Handle errors gracefully
+    res.status(500).json({ message: 'Internal server error' }); // Handle errors
   }
 };
 
