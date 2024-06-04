@@ -1,7 +1,7 @@
 // get all professor in DB and show it as options on the index.html file
 
 async function getProfData(){
-    const res = await fetch("http://localhost:3500/professor");
+    const res = await fetch("https://freshmenmern.onrender.com/professor");
     const data = await res.json();
     
     let profData = data;
@@ -23,7 +23,7 @@ getProfData();
 // fill the Review area on selection of a prof
 
 document.getElementById("submit").addEventListener('click', async function () {
-    const res = await fetch("http://localhost:3500/professor");
+    const res = await fetch("https://freshmenmern.onrender.com/professor");
     const data = await res.json();
     let dropdown = document.getElementById("dropdown");
     let selectedProf = dropdown.value;
@@ -53,8 +53,7 @@ document.getElementById("submit").addEventListener('click', async function () {
                     Evaluation : ${Evaluation} <br>
                     Behaviour : ${Behaviour} <br>
                     Internals : ${Internals} <br>
-                    No Of Reviews : ${noOfReviews} <br>
-                    Class Average : ${avg} <br><br>
+                    Class Marks Average : ${avg} <br><br>
                     Overall : ${Overall} <br>`
       
             ;
@@ -104,3 +103,4 @@ function filterFunction() {
 }
 
 document.getElementById("searchInput").addEventListener("input", filterFunction);
+

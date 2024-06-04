@@ -6,6 +6,16 @@ require('dotenv').config()
 
 const bcrypt = require('bcrypt')
 
+async function isAuthenticated(req, res, next) {
+    try {
+      await verifyJWT(req, res, () => { // Pass an empty callback for verification only
+        return true; // User is authenticated if middleware doesn't throw
+      });
+    } catch (error) {
+      return false; // User is not authenticated if an error occurs
+    }
+  }
+
 const handleLogin = async (req, res) => {
     const {email, password} = req.body
 
