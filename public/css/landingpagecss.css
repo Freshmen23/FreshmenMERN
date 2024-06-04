@@ -152,7 +152,7 @@ input[type="text"] {
 }
 #selectedOption {
   font-weight: bold;
-  color: black;
+  color: #f0ff00;
 }
 /* ---Find out button-- */
 button[type="submit"] {
@@ -216,7 +216,7 @@ select {
 }
 p {
   font-family: "Nunito Sans", sans-serif;
-  background-color: rgb(0, 255, 0);
+  background-color: #33009a;
   height: 167px;
   border-radius: 10px;
   padding-left: 10px;
@@ -228,9 +228,6 @@ h3 {
   padding-left: 10px;
   padding-top: 10px;
   color: #f0ff00;
-}
-#selectedOption {
-  color: black;
 }
 
 /* ------------------------------------------------------------------------Accordion(FAQs) */

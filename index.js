@@ -6,14 +6,13 @@ const app = express();
 const mongoose = require('mongoose');
 const DBConnect = require('./config/DBConnect')
 const cors = require('cors');
+const cookieParser = require("cookie-parser");
 
 const PORT = process.env.PORT || 3500;
 
-// built in middleware for handling form data
-app.use(express.urlencoded({ extended: false}));
-// build in middleware for json
-app.use(express.json());
-
+app.use(express.urlencoded({ extended: false}));    // built in middleware for handling form data
+app.use(express.json());    // build in middleware for json
+app.use(cookieParser())
 // Connect to MongoDB
 DBConnect();
 
@@ -24,15 +23,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Basic routes for pages
 app.use('/', require('./routes/root.js'))
+app.use('/register', require('./routes/register.js'))
+app.use('/auth', require('./routes/auth.js'))
 
 // crud apis for proffessor model
 app.use('/professor', require('./routes/api/professors'))
 
-
-
-// app.listen(PORT, ()=>{
-//     console.log(`server is running on port ${PORT}`);
-// })
 
 mongoose.connection.once('open', ()=>{
     console.log("mongoDB connected");

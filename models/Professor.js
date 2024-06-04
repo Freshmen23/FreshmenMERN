@@ -1,4 +1,3 @@
-const { Decimal128 } = require('mongodb');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -10,23 +9,23 @@ const ProfessorSchema = new Schema({
     trim: true
   },
   teaching: {
-    type: String,
+    type: Number,
     required: true,
   },
   evaluation: {
-    type: String,
+    type: Number,
     required: true,
   },
   behavior: {
-    type: String,
+    type: Number,
     required: true,
   },
   internals: {
-    type: String,
+    type: Number,
     required: true,
   },
-  average: {
-    type: String,
+  class_average: {
+    type: Number,
     required: true,
     trim : true
   },
@@ -40,7 +39,11 @@ const ProfessorSchema = new Schema({
     required: true,
     default : "",
   }
-});
+},
+  {
+    timestamps: true
+  }
+);
 
 // Create the model from the schema
 const Professor = mongoose.model('Professor', ProfessorSchema);
