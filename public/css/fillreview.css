@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color:#ececec;
+    --secondry-color:#9fd3c7;
+    --Accent-color:black;
+    --tertiary-color:#385170;
+}
+
+.dark_mode{
+    --primary-color: #181c22;
+    --secondry-color: #9fd3c7;
+    --tertiary-color:#385170;
+    --Accent-color:white;
+}
+
+/* css of website starts here */
+body{
+    background-color: var(--primary-color);
+}
+
+.logo{
+    width: 5rem;
+}
+.navbar{
+    display: flex;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 100%;
+    background-color: var(--tertiary-color);
+    color: var(--secondry-color);
+    font-size: 20px;
+    align-items: center;
+    gap: 19px;
+}
+.navbar .nav-right{
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    gap: 19px;
+    justify-content: end;
+    margin-right: 15px;
+}
+
+nav .mode{
+    width: 25px;
+    cursor: pointer;
+}
+.hero{
+    margin: 12px;
+    border: 6px solid var(--tertiary-color);
+    border-radius: 12px;
+    background-color: var(--tertiary-color);
+    padding: 5px 10px;
+    color:var(--secondry-color);
+    font-size: large;
+}
+
+.container{
+    margin: auto;
+    border: 6px solid var(--tertiary-color);
+    border-radius: 12px;
+    width: 80vw;
+    background-color: var(--tertiary-color);
+    color: var(--secondry-color);
+    box-shadow: 7px 7px #385170e3;
+}
+.form-group{
+    padding: 8px;
+    font-size: large;
+}
+.form-group select{
+    margin-left: 5px;
+    padding-left: 5px;
+    background-color: var(--secondry-color);
+    border-radius: 8px;
+}
+.radio-group{
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+.radio-group label{
+    cursor: pointer ;
+    color: var(--primary-color);
+}
+.radio-group label input{
+    cursor: pointer ;
+    background-color: var(--tertiary-color);
+}
+.submit{
+    margin: 22px auto;
+    display: flex;
+    padding: 8px 16px;
+    background-color: var(--tertiary-color);
+    color: var(--secondry-color);
+    border: 2px solid var(--tertiary-color) ;
+    border-radius: 12px;
+    font-size: larger;
+}
+/* pre use variable */
+.pointer{
+    cursor: pointer;
+}
