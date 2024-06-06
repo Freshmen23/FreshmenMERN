@@ -3,7 +3,10 @@
   color:black;
   background-color:yellow ;
 }
-
+*{
+  margin: 0px;
+  padding: 0px;
+}
 /* -----------------------------------------------Background-------------------------------------------------------- */
 body {
   margin: 0;
@@ -57,7 +60,7 @@ a.Details {
 .Details {
   padding-right: 1px;
 }
-button {
+.navbar button {
   cursor: pointer;
   font-family: "Nunito Sans", sans-serif;
   border: none;
@@ -69,7 +72,7 @@ button {
   transition: 0.2s;
   border-radius: 10px;
 }
-button:hover {
+.navbar button:hover {
   color:#f0ff00;
   background-color: #5400ff;
   border: 2px solid #f0ff00;
@@ -135,6 +138,106 @@ label {
   display: block;
   margin-bottom: 10px;
 }
+
+/* - --- --- - - - - - -- - for popup of signin and login  ------------ -- -- - --*/
+
+.popup{
+  top: 25%;
+  left: 25%;
+  position: absolute;
+  margin: auto;
+  width: 50vw;
+  height: 50vh;
+  background-color: rgb(241, 241, 241);
+  border: 8px solid rgb(252, 252, 252);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 2fr 9fr 1fr;
+  gap: 1.5rem;
+}
+.popup .close{
+  margin-top: 6px;
+  margin-left: 12px;
+}
+.popup .close .closeimg{
+  width: 24px;
+  cursor: pointer;
+}
+
+.popup-right .buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+.popup .popup-left{
+  width: 12vw;
+}
+.popup .popup-left img{
+  width: inherit;
+  height: 100%;
+  border-radius: 12px;
+}
+.popup-right .buttons button{
+  background-color: gainsboro;
+  border: none;
+  width: 100%;
+  padding: 8px 6rem;
+  cursor: pointer;
+  font-size: large;
+}
+.popup-right .buttons .active{
+  background-color: black;
+  color: white;
+  /* border: none; */
+}
+.popup-contents .signup{
+  width: 100%;
+}
+.popup-contents  .sub-grp{
+  display: flex;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+.popup-contents .sub-grp {
+  margin-top: 12px;
+  width: 100%;
+  background-color: gainsboro;
+  border: 1px solid gainsboro;
+}
+.popup-contents .sub-grp img{
+  width: 20px;
+  justify-self: center;
+  background-color: gainsboro;
+  padding: 6px 12px;
+}
+.sub-grp input{
+  width: 100%;
+  border: none;
+  padding-left: 6px;
+}
+.checkbox{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.checkbox p{
+  font-weight: bold;
+  padding-left: 6px;
+}
+.popup-contents .submitbtn{
+  display: flex; 
+  margin: auto;
+  padding: 6px 24px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: gainsboro;
+}
+.popup-contents .submitbtn:hover{
+ background-color: rgba(220, 220, 220, 0.738);
+}
+.hidden{
+  display: none;
+}
 /* ----------------------------------------------------------------------Search button---------------------------------------------------------- */
 .search-bar {
   display: flex;
@@ -142,7 +245,7 @@ label {
   margin-bottom: 20px;
 }
 /*--- Input field---- */
-input[type="text"] {
+.search-bar input[type="text"] {
   padding: 5px;
   width: 250px;
   height: 37px;
@@ -155,7 +258,7 @@ input[type="text"] {
   color: #f0ff00;
 }
 /* ---Find out button-- */
-button[type="submit"] {
+.search-bar #submit {
   height: 50px;
   padding: 2px 16px;
   background-color: #f0ff00;
@@ -165,13 +268,13 @@ button[type="submit"] {
   font-size: 16px;
   cursor: pointer;
 }
-button[type="submit"]:hover {
+.search-bar #submit:hover {
   background-color: #5400ff;
   color: white;
 }.search-bar {
     justify-content: center;
 }
-select {
+.search-bar select {
   height: 45px;
   width: 170px;
   border-radius: 10px;
@@ -214,7 +317,7 @@ select {
   height: 219px;
   border-radius: 10px;
 }
-p {
+.results p {
   font-family: "Nunito Sans", sans-serif;
   background-color: #33009a;
   height: 167px;
@@ -286,7 +389,23 @@ h1{
 }
 
 /* -------------------------------------------------------------------------------footer----------------------------------------------------------------- */
-
+.footer button {
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  border: none;
+  background: yellow;
+  padding: 12px 30px;
+  color: #5400ff;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+.footer button:hover {
+  color:#f0ff00;
+  background-color: #5400ff;
+  border: 2px solid #f0ff00;
+}
 .footer{
   display: grid;
   /* grid-template-columns: 300px 400px 647px; */
@@ -373,7 +492,7 @@ h1{
   /* --Background-- */
   body {
     background-size: cover;
-    background-image: url("responsivebg.png");
+    background-image: url("../images/responsivebg.png");
   }
   /* --Navbar-- */
   .navbar-toggle {
@@ -422,7 +541,7 @@ h1{
     margin-bottom: 10px;
   }
   /* --Input field-- */
-  input[type="text"] {
+  .search-bar input[type="text"] {
     padding: 6px;
     width: 120px;
     height: 30px;
@@ -678,7 +797,9 @@ h1{
   align-items: center;
 }
 
-
+.flex{
+  display: flex;
+}
 
 .flexitem1{
   /* overflow: hidden; */

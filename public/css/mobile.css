@@ -1,0 +1,42 @@
+/* for popup */
+.popup{
+    grid-template-columns: 6fr 6fr;
+    gap: 1rem;
+  }
+.popup .popup-left{
+    display: none;
+}
+
+.popup .popup-right{
+    width: inherit;
+}
+
+.popup-right .buttons button{
+    width: 80vw;
+    padding: 8px 2rem;
+    font-size: medium;
+}
+.popup-contents .signup{
+    width: inherit;
+  }
+
+.checkbox {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.popup-contents .submitbtn{
+    padding: 6px 12px;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: gainsboro;
+}
+.popup .close{
+    width: 24px;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-left: 12px;
+}
+.popup .close .closeimg{
+    filter: invert(1);
+}
