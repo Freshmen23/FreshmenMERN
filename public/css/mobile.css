@@ -1,6 +1,6 @@
 /* for popup */
 .popup{
-    grid-template-columns: 6fr 6fr;
+    grid-template-columns: 12fr ;
     gap: 1rem;
   }
 .popup .popup-left{
@@ -18,7 +18,7 @@
 }
 .popup-contents .signup{
     width: inherit;
-  }
+}
 
 .checkbox {
     margin-top: 6px;
@@ -36,7 +36,11 @@
     cursor: pointer;
     margin-top: 6px;
     margin-left: 12px;
+    position: absolute;
+    top: -19px;
+    right: -10px;
+
 }
 .popup .close .closeimg{
-    filter: invert(1);
+    /* filter: invert(1); */
 }

@@ -149,13 +149,17 @@ label {
   width: 50vw;
   height: 50vh;
   background-color: rgb(241, 241, 241);
-  border: 8px solid rgb(252, 252, 252);
+  border: 16px solid rgb(241, 241, 241);
   border-radius: 12px;
   display: grid;
   grid-template-columns: 2fr 9fr 1fr;
   gap: 1.5rem;
 }
+
 .popup .close{
+  position: absolute;
+  top: -14px;
+  right: -8px;
   margin-top: 6px;
   margin-left: 12px;
 }
