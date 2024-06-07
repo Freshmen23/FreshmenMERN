@@ -1,76 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Submit Review</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Submit Review</title>
+  <link rel="stylesheet" href="../public/css/fillreview.css">
+  <link rel="shortcut icon" href="../public/images/Logofortitle.png" type="image/x-icon">
 </head>
+
 <body>
-    <form id="reviewForm">
-        <div class="form-group">
-            <label for="name">Teacher</label>
-            <select name="name" id="teacher" required>
-              <!-- filled by DB  -->
-            </select>
-          </div>
-      
-        <div class="form-group">
-            <label>Teaching</label>
-            <div class="radio-group">
-              <label><input type="radio" name="teaching" value="1"> 1</label>
-              <label><input type="radio" name="teaching" value="2"> 2</label>
-              <label><input type="radio" name="teaching" value="3"> 3</label>
-              <label><input type="radio" name="teaching" value="4"> 4</label>
-              <label><input type="radio" name="teaching" value="5"> 5</label>
-            </div>
-          </div>
+  <form id="reviewForm">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img class="logo" src="../public/images/Logopng.png" alt="">
+      </div>
+      <div class="nav-right">
+        <ul class="pointer">Home</ul>
+        <ul class="pointer">About</ul>
+        <img class="mode" src="../public/images/darkMode.png" alt="">
+      </div>
 
-          <div class="form-group">
-            <label>Evaluation</label>
-            <div class="radio-group">
-              <label><input type="radio" name="evaluation" value="1"> 1</label>
-              <label><input type="radio" name="evaluation" value="2"> 2</label>
-              <label><input type="radio" name="evaluation" value="3"> 3</label>
-              <label><input type="radio" name="evaluation" value="4"> 4</label>
-              <label><input type="radio" name="evaluation" value="5"> 5</label>
-            </div>
-          </div>
-      
-          <div class="form-group">
-            <label>Behavior</label>
-            <div class="radio-group">
-              <label><input type="radio" name="behavior" value="1"> 1</label>
-              <label><input type="radio" name="behavior" value="2"> 2</label>
-              <label><input type="radio" name="behavior" value="3"> 3</label>
-              <label><input type="radio" name="behavior" value="4"> 4</label>
-              <label><input type="radio" name="behavior" value="5"> 5</label>
-            </div>
-          </div>
-      
-          <div class="form-group">
-            <label>Internals</label>
-            <div class="radio-group">
-              <label><input type="radio" name="internals" value="1"> 1</label>
-              <label><input type="radio" name="internals" value="2"> 2</label>
-              <label><input type="radio" name="internals" value="3"> 3</label>
-              <label><input type="radio" name="internals" value="4"> 4</label>
-              <label><input type="radio" name="internals" value="5"> 5</label>
-            </div>
-          </div>
-      
-          <div class="form-group">
-            <label>Class Average Marks</label>
-            <div class="radio-group">
-              <label><input type="radio" name="class_average" value=1> Low</label>
-              <label><input type="radio" name="class_average" value=2> Medium</label>
-              <label><input type="radio" name="class_average" value=3> High</label>
-            </div>
-          </div>
-      
-          <button type="submit">Submit Review</button>
-        
-    </form>
+    </nav>
+    <section class="hero">
+      <p>Give rating from 1 to 5, 1 for strongly disagree on the given criteria and 5 for strongly agree </p>
+    </section>
+    <section class="container">
+      <div class="form-group">
+        <label for="name">Teacher</label>
+        <select name="name" id="teacher" required > 
+          <!-- filled by DB  -->
+        </select>
+      </div>
 
-    <script src="./js/fillReview.js"></script>
+      <div class="form-group">
+        <label>Teaching</label>
+        <div class="radio-group">
+          <label><input type="radio" name="teaching" value="1"> 1</label>
+          <label><input type="radio" name="teaching" value="2"> 2</label>
+          <label><input type="radio" name="teaching " value="3"> 3</label>
+          <label><input type="radio" name="teaching" value="4"> 4</label>
+          <label><input type="radio" name="teaching" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Evaluation</label>
+        <div class="radio-group">
+          <label><input type="radio" name="evaluation" value="1"> 1</label>
+          <label><input type="radio" name="evaluation" value="2"> 2</label>
+          <label><input type="radio" name="evaluation" value="3"> 3</label>
+          <label><input type="radio" name="evaluation" value="4"> 4</label>
+          <label><input type="radio" name="evaluation" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Behavior</label>
+        <div class="radio-group">
+          <label><input type="radio" name="behavior" value="1"> 1</label>
+          <label><input type="radio" name="behavior" value="2"> 2</label>
+          <label><input type="radio" name="behavior" value="3"> 3</label>
+          <label><input type="radio" name="behavior" value="4"> 4</label>
+          <label><input type="radio" name="behavior" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Internals</label>
+        <div class="radio-group">
+          <label><input type="radio" name="internals" value="1"> 1</label>
+          <label><input type="radio" name="internals" value="2"> 2</label>
+          <label><input type="radio" name="internals" value="3"> 3</label>
+          <label><input type="radio" name="internals" value="4"> 4</label>
+          <label><input type="radio" name="internals" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Class Average Marks</label>
+        <div class="radio-group">
+          <label><input type="radio" name="class_average" value=1> Low</label>
+          <label><input type="radio" name="class_average" value=2> Medium</label>
+          <label><input type="radio" name="class_average" value=3> High</label>
+        </div>
+      </div>
+    </section>
+    <button type="submit" class="submit pointer">Submit Review</button>
+  </form>
+
+  <script src="./js/fillReview.js"></script>
 </body>
+
+<script>
+  var mode = document.querySelector(".mode");
+  mode.addEventListener("click", () => {
+    document.body.classList.toggle("dark_mode");
+    if (document.body.classList.contains("dark_mode")) {
+      mode.src = "../public/images/lightMode.png";
+    } else {
+      mode.src = "../public/images/darkMode.png";
+    }
+  })
+</script>
+
 </html>
